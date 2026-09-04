@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pl-PL" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
+  <meta name="theme-color" content="#03060A">
+  <meta name="description" content="Mobilny panel sterowania agentem Hermes AI">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Hermes Asystent Mobilny</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="viewport-wrapper">
+    <header class="app-header">
+      <div class="brand-zone">
+        <span id="status-dot" class="dot-indicator" aria-hidden="true"></span>
+        <div class="title-meta">
+          <span class="brand-name">HERMES PL</span>
+          <span id="status-label" class="brand-sub">Nawiązywanie połączenia…</span>
+        </div>
+      </div>
+      <div class="header-tools">
+        <button id="tts-toggle" class="icon-btn" type="button" aria-label="Włącz lektora PL" title="Synteza mowy PL">Głośnik</button>
+        <button id="clear-btn" class="icon-btn" type="button" aria-label="Rozpocznij nową sesję" title="Nowa sesja">Nowa</button>
+      </div>
+    </header>
+
+    <main id="chat-viewport" class="chat-flow">
+      <div id="messages-list" class="messages-container">
+        <div class="system-card">Węzeł Hermes Mobile aktywny. Możesz pisać lub dyktować polecenia po polsku.</div>
+      </div>
+    </main>
+
+    <footer class="dock-zone">
+      <form id="prompt-form" class="dock-form">
+        <button id="mic-btn" class="mic-trigger" type="button" aria-label="Dyktowanie głosowe po polsku" title="Mów po polsku">Mikrofon</button>
+        <textarea id="user-input" rows="1" placeholder="Wpisz polecenie lub podyktuj zadanie…" required autocomplete="off" autocorrect="on" spellcheck="true"></textarea>
+        <button id="send-btn" class="send-trigger" type="submit" aria-label="Wyślij wiadomość">Wyślij</button>
+      </form>
+    </footer>
+  </div>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
