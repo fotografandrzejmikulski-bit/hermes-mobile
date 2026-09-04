@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hermes Asystent Mobilny</string>
+    <string name="chat_send">Wyślij wiadomość</string>
+    <string name="chat_voice_input">Dyktowanie głosowe po polsku</string>
+    <string name="chat_voice_start">Rozpocznij dyktowanie</string>
+    <string name="chat_voice_stop">Zatrzymaj dyktowanie</string>
+    <string name="tts_enable">Włącz lektora PL</string>
+    <string name="tts_disable">Wyłącz lektora PL</string>
+    <string name="session_new">Nowa sesja</string>
+    <string name="session_reset_confirm">Czy chcesz rozpocząć nową sesję i wyczyścić ekran?</string>
+    <string name="status_connecting">Nawiązywanie połączenia…</string>
+    <string name="status_connected">Połączono z agentem</string>
+    <string name="status_disconnected">Utracono połączenie z bramą</string>
+    <string name="tool_invoked">Agent uruchamia narzędzie: %1$s</string>
+    <string name="language_status">Polski (pl-PL)</string>
+    <string name="voice_unavailable">Rozpoznawanie mowy nie jest dostępne na tym urządzeniu.</string>
+    <string name="tts_unavailable">Synteza mowy nie jest dostępna na tym urządzeniu.</string>
+    <string name="network_error">Wystąpił błąd komunikacji z bramą Hermes.</string>
+</resources>

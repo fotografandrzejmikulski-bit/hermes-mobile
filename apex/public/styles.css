@@ -1,0 +1,71 @@
+:root {
+  --bg: #03060A;
+  --surface: #0B0F19;
+  --card: #121826;
+  --border: #1F293D;
+  --text: #F8FAFC;
+  --muted: #94A3B8;
+  --cyan: #38BDF8;
+  --ok: #10B981;
+  --warn: #F59E0B;
+  --err: #EF4444;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: var(--bg); color: var(--text); }
+body { overscroll-behavior: none; }
+button, textarea { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+
+#viewport-wrapper {
+  height: 100dvh;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.app-header, .dock-zone {
+  flex: 0 0 auto;
+  background: rgba(11, 15, 25, .92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.app-header { min-height: 56px; padding: 8px 14px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); }
+.dock-zone { padding: 10px 12px; border-top: 1px solid var(--border); }
+.brand-zone { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.title-meta { display: flex; flex-direction: column; min-width: 0; }
+.brand-name { font-size: 13px; font-weight: 800; letter-spacing: .12em; }
+.brand-sub { color: var(--muted); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dot-indicator { width: 9px; height: 9px; border-radius: 50%; background: var(--warn); }
+.dot-indicator.online { background: var(--ok); box-shadow: 0 0 10px var(--ok); }
+.dot-indicator.offline { background: var(--err); box-shadow: 0 0 10px var(--err); }
+.header-tools { display: flex; gap: 6px; }
+.icon-btn, .mic-trigger, .send-trigger { min-width: 44px; min-height: 44px; border-radius: 12px; border: 1px solid var(--border); background: transparent; color: var(--text); }
+.icon-btn.active { color: var(--cyan); background: rgba(56, 189, 248, .12); }
+.chat-flow { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding: 14px; }
+.messages-container { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.system-card, .bubble { border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; line-height: 1.55; overflow-wrap: anywhere; }
+.system-card { color: var(--muted); background: rgba(18, 24, 38, .6); font-size: 12px; text-align: center; }
+.bubble { max-width: 92%; font-size: 14px; }
+.bubble.user { align-self: flex-end; background: #075985; border-bottom-right-radius: 5px; }
+.bubble.assistant { align-self: flex-start; background: var(--card); border-bottom-left-radius: 5px; }
+.code-container { margin: 10px 0; border: 1px solid var(--border); border-radius: 9px; overflow: hidden; background: #020408; }
+.code-header { padding: 7px 10px; display: flex; justify-content: space-between; gap: 8px; color: var(--muted); font: 11px var(--mono); }
+.copy-btn { color: var(--cyan); background: transparent; border: 0; padding: 4px 6px; }
+pre { margin: 0; overflow-x: auto; }
+pre code { display: block; padding: 12px; color: #E2E8F0; font: 12px/1.5 var(--mono); white-space: pre; }
+.tool-badge { align-self: flex-start; padding: 7px 10px; border-radius: 9px; border: 1px solid rgba(56,189,248,.3); color: var(--cyan); background: rgba(2,132,199,.1); font: 11px var(--mono); }
+.dock-form { max-width: 860px; margin: 0 auto; display: flex; align-items: flex-end; gap: 8px; }
+#user-input { min-width: 0; flex: 1; max-height: 140px; resize: none; border-radius: 18px; border: 1px solid var(--border); outline: 0; padding: 10px 14px; color: var(--text); background: #020408; line-height: 1.45; }
+#user-input:focus { border-color: var(--cyan); }
+.mic-trigger.recording { background: var(--err); color: #fff; }
+.send-trigger { background: var(--cyan); color: #000; border-color: transparent; }
+.send-trigger:disabled { opacity: .35; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}

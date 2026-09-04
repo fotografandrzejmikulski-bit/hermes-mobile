@@ -1,0 +1,21 @@
+{
+  "name": "Hermes Asystent Mobilny",
+  "short_name": "Hermes PL",
+  "description": "Przełomowy mobilny panel sterowania agentem Hermes AI",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "pl-PL",
+  "dir": "ltr",
+  "display": "standalone",
+  "background_color": "#03060A",
+  "theme_color": "#03060A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
